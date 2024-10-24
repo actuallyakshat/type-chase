@@ -1,15 +1,20 @@
-import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>
+    <div className="font-inter">
+      {/* <Navbar /> */}
+      <div className="min-h-[100dvh] bg-[#fcfcfc] flex flex-col h-full w-screen pt-14">
+        <Outlet />
       </div>
-      <hr />
-      <Outlet />
-    </>
+    </div>
   ),
 });
+
+// function Navbar() {
+//   return (
+//     <nav className="h-14 w-screen fixed top-0 shadow-sm border-b">
+//       <div>Navbar</div>
+//     </nav>
+//   );
+// }

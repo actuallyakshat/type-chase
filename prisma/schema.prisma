@@ -7,16 +7,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Room {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  users     User[]   @relation("RoomMembers")
+}
+
 model User {
   id        String   @id @default(uuid())
   name      String
+  isAdmin   Boolean
   roomId    String
-  room      Room     @relation(fields: [roomId], references: [id])
-  createdAt DateTime @default(now())
-}
-
-model Room {
-  id        String   @id @default(uuid())
-  users     User[]
+  room      Room     @relation(fields: [roomId], references: [id], name: "RoomMembers")
   createdAt DateTime @default(now())
 }

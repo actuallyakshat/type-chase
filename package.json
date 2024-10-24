@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "hono": "^4.6.6"
+  },
+  "name": "type-chase",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch server/index.ts",
+    "start": "bun server/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.12"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
